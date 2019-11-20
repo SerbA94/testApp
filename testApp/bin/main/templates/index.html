@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<head>
+		<title>TestApp</title>
+	</head>
+	<body>
+		<h1>Main page</h1>
+		<div sec:authorize="isAuthenticated()">
+			Logged in as : <b>[[${#httpServletRequest.remoteUser}]]</b> <br>
+		</div>
+		<a href="/logout" sec:authorize="isAuthenticated()">logout</a>
+		<a href="/login" sec:authorize="!isAuthenticated()">login</a>
+		<a href="/registration" sec:authorize="!isAuthenticated()">registration</a>
+		<a href="/profile" sec:authorize="isAuthenticated()">profile</a>
+	</body>
+</html>

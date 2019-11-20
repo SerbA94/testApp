@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<head>
+		<title>Registration</title>
+	</head>
+	<body>
+		<h1>Registration page</h1>
+		<form th:action="@{/registration}" th:object="${user}" method="post">
+			<div>
+				<input type="text" th:field="*{username}" placeholder="USERNAME" required>
+				<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+			</div>
+			<div>
+				<input type="password" th:field="*{password}" placeholder="PASSWORD" required>
+			</div>
+			<div>
+				<b>Select your country</b><br>
+				<select th:field="*{country}">
+  					<option value="USA">USA</option>
+  					<option value="CANADA">Canada</option>
+				</select>
+			</div>		
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>	
+	</body>
+</html>
