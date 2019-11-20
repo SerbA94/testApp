@@ -5,7 +5,10 @@
 		<title>Login</title>
 	</head>
 	<body>
-		<h1>Login page</h1>				
+		<h1>Login page</h1>
+		<a href="/">main page</a>
+		<a href="/registration" sec:authorize="!isAuthenticated()">registration</a><br>
+						
 		<form th:action="@{/login}" method="post">
 			<div>
 				<input type="text" placeholder="USERNAME" name="username" required>			

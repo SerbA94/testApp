@@ -7,7 +7,7 @@
     <body>
     	<h1>User profile</h1>
     	<a href="/">main page</a>
-    	<a href="/logout" sec:authorize="isAuthenticated()">logout</a>
+    	<a href="/logout" sec:authorize="isAuthenticated()">logout</a><br>
     	<div>
    			Logged in as : <b>[[${#httpServletRequest.remoteUser}]]</b> <br>
    		</div>  
